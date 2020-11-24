@@ -25,6 +25,13 @@ var upperCase = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"
 
 
 // Varable's Declared //
+var confirmLength = "";
+var confirmSpecialChar;
+var confirmNumChar;
+var confirmLowerCase;
+var confirmUpeerCase;
+
+
 
 // Prompt for user to select how many characters that are going to use //
 
@@ -41,3 +48,10 @@ var upperCase = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"
 // Empty string will be filled according to for loop selecting random characters from array //
 
 // Display password in the pass word input box //
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
