@@ -2,17 +2,6 @@
 document.querySelector("#generate").addEventListener("click", writePassword);
 
 
-
-
-// Write password to the #password input //
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -34,10 +23,17 @@ var confirmUpeerCase;
 
 
 // Prompt for user to select how many characters that are going to use //
+function generatePassword() {
+  var confirmLength = (prompt("Please choose how many characters you would like your password to contain?"));
 
 // Loop when outside parameters 8-128 characters //
+while(confirmLength <= 8 || confirmLength >= 129) {
+  alert("Your password length must be between 8-128 characters long try again");
+  var confirmLength = (prompt("Please choose how many characters you would like your password to contain?"));
+}
 
-// Alert user chosen charcter amount //
+  // Alert user chosen charcter amount //
+  alert(`Your password will contain ${confirmLength} characters`);
 
 // Password Parameters //
 
