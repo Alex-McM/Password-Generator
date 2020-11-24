@@ -2,8 +2,8 @@
 document.querySelector("#generate").addEventListener("click", writePassword);
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
 
 // Arrays //
 var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+"];
@@ -18,7 +18,7 @@ var confirmLength = "";
 var confirmSpecialChar;
 var confirmNumChar;
 var confirmLowerCase;
-var confirmUpeerCase;
+var confirmUpperCase;
 
 
 
@@ -36,6 +36,11 @@ while(confirmLength <= 8 || confirmLength >= 129) {
   alert(`Your password will contain ${confirmLength} characters`);
 
 // Password Parameters //
+var confirmSpecialChar = confirm("Click OK to confirm if you would like to include Special Characters");
+var confirmNumChar = confirm("Click OK to confirm if you would like to include Numerical Characters");
+var confirmLowerCase = confirm("Click OK to confirm if you would like to include Lowercase Characters");
+var confirmUpperCase = confirm("Click OK to confirm if you would like to include Uppercase Characters");
+
 
 // Loop if password is outside parameters 8-128 //
 
