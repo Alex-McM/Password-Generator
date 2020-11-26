@@ -1,20 +1,12 @@
 // Assignment Code //
 
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate").addEventListener("click", writePassword);
 
 
 
 
 
-// Display password in the pass word input box //
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
 
 
 // Arrays //
@@ -64,30 +56,39 @@ function generatePassword() {
 
   }
   // Assigned action to password parameters //
-  if (specialChar) {
-    charset += confirmSpecialChar;
-    result += confirmSpecialChar.charAt(Math.floor(Math.random() * confirmSpecialChar.length));
+ 
+  var passwordCharacters = []
+      
+  if (confirmSpecialChar) {
+    passwordCharacters = passwordCharacters.concat(specialChar)
   }
 
-  if (num) {
-    charset += confirmNumChar;
-    result += confirmNumChar.charAt(Math.floor(Math.random() * confirmNumChar.length));
+  if (confirmNumChar) {
+    passwordCharacters = passwordCharacters.concat(number)
+  }
+    
+  if (confirmLowerCase) {
+    passwordCharacters = passwordCharacters.concat(alphaLower)
   }
 
-  if (lowerCase) {
-    charset += confirmLowerCase;
-    result += confirmLowerCase.charAt(Math.floor(Math.random() * confirmLowerCase.length));
-  }
-
-  if (upperCase) {
-    charset += confirmUpperCase;
-    result += confirmUpperCase.charAt(Math.floor(Math.random() * confirmUpperCase.length));
+  if (confirmUpperCase) {
+    passwordCharacters = passwordCharacters.concat(alphaUpper)
   }
 
 
+  // Empty string will be filled according to for loop selecting random characters from array //
 
-
-  // Empty string will be filled according to for loop selecting random characters from array // 
 } 
 
-generatePassword();
+// Generate Password to input //
+
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+
