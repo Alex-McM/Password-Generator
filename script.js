@@ -64,7 +64,26 @@ function generatePassword() {
 
   }
   // Assigned action to password parameters //
-  
+  if (specialChar) {
+    charset += confirmSpecialChar;
+    result += confirmSpecialChar.charAt(Math.floor(Math.random() * confirmSpecialChar.length));
+  }
+
+  if (num) {
+    charset += confirmNumChar;
+    result += confirmNumChar.charAt(Math.floor(Math.random() * confirmNumChar.length));
+  }
+
+  if (lowerCase) {
+    charset += confirmLowerCase;
+    result += confirmLowerCase.charAt(Math.floor(Math.random() * confirmLowerCase.length));
+  }
+
+  if (upperCase) {
+    charset += confirmUpperCase;
+    result += confirmUpperCase.charAt(Math.floor(Math.random() * confirmUpperCase.length));
+  }
+
 
 
 
