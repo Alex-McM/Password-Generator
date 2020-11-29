@@ -47,7 +47,7 @@ function generatePassword() {
 
 
   // Loop if password is outside parameters 8-128 //
-  while(confirmLowerCase === false && confirmUpperCase === false && confirmNumChar && confirmSpecialChar === false) {
+  while(confirmLowerCase === false && confirmUpperCase === false && confirmNumChar === false && confirmSpecialChar === false) {
     alert("Please chose at least one password parameter");
     var confirmSpecialChar = confirm("Click OK to confirm if you would like to include Special Characters");
     var confirmNumChar = confirm("Click OK to confirm if you would like to include Numerical Characters");
@@ -73,12 +73,24 @@ function generatePassword() {
 
   if (confirmUpperCase) {
     passwordCharacters = passwordCharacters.concat(alphaUpper)
+  
   }
 
 
-  // Empty string will be filled according to for loop selecting random characters from array //
+  // Empty string will be filled according to for loop selecting random characters from array /
+    
+  for(var i = 0; i<passLength; i++) {
+    ​
+        var charIndex =  Math.floor(Math.random()*chars.length);
+        generatedPass += passwordCharacters[charIndex];
+    ​
+        console.log('charIndex: ' + charIndex);
+        console.log('generatedPass: ' +  generatedPass);
+    }
+    
 
-} 
+   } 
+
 
 // Generate Password to input //
 
