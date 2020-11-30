@@ -12,6 +12,7 @@ Special characters
 
 URL
 
+https://github.com/Alex-McM/Password-Generator
 
 Page Link
 
