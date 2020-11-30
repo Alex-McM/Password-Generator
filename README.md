@@ -10,6 +10,10 @@ Lowercase/Uppercase/Mixed Case
 Numerical characters
 Special characters
 
+URL
+
+
+Page Link
 
 Layout
 
